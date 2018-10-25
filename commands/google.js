@@ -21,11 +21,11 @@ exports.run = (client, message, args) => {
       var link = res.links[i];
       
       // Skip cards
-      if (link.link === null) {
+      if (link === undefined || link.link === null || link.href === null) {
         continue;
       }
       // Include video-only results
-      if (link.description === "")
+      if (link.description === "" || link.title === "")
         link.description = "None";
       
       embed.addField(link.title + "\n" + link.href, 
