@@ -4,7 +4,10 @@ module.exports = (client, message) => {
   
   // Get each space-separated word without the prefix
   const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
+  
+  // Get the command
   const command = args[0];
+  args.shift();
   
   // Grab this command's file data from the Enmap
   const cmd = client.commands.get(command);

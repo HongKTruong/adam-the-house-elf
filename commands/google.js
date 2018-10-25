@@ -5,8 +5,7 @@ google.resultsPerPage = 5;
 let nextCounter = 0;
 
 exports.run = (client, message, args) => {
-  // Remove "google" from the arguments and convert them into a string
-  args.shift();
+  // Convert the search args into a string
   args = args.join(" ");
   
   const embed = new Discord.RichEmbed()
